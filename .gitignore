@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+dist/
+
+# Logs
+.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# dotenv and environment files (do NOT commit secrets)
+.env
+.env.*
+.secrets
+
+# AWS/Cloud credentials
+.aws/
+credentials
+config
+*.pem
+*.key
+
+# Kubernetes / Helm
+*.kubeconfig
+
+# Git credentials
+.git-credentials
+.gitconfig.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Database files
+*.sqlite3
+
+# model artifacts (large files)
+/backend/models/

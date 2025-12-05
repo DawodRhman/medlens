@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medlens-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: medlens-backend
+  template:
+    metadata:
+      labels:
+        app: medlens-backend
+    spec:
+      containers:
+        - name: backend
+          image: medlens-backend:latest
+          ports:
+            - containerPort: 8000

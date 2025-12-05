@@ -1,0 +1,4 @@
+body{font-family: Arial, Helvetica, sans-serif; margin:0; padding:20px; background:#f5f7fb}
+.login{max-width:320px;margin:40px auto;padding:20px;background:white;border-radius:6px}
+.dashboard header{display:flex;justify-content:space-between;align-items:center}
+button{padding:8px 12px;border:none;background:#2563eb;color:white;border-radius:4px}

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medlens-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: medlens-frontend
+  template:
+    metadata:
+      labels:
+        app: medlens-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: medlens-frontend:latest
+          ports:
+            - containerPort: 5173

@@ -1,0 +1,1 @@
+Place migration scripts here. Run `alembic revision --autogenerate -m "init"` to create initial migration.

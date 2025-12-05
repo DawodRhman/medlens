@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+      - MONGO_DB=medlens
+    depends_on:
+      - mongo
+      - postgres
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:6.0
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: medlens
+      POSTGRES_PASSWORD: medlens
+      POSTGRES_DB: medlens
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  mongo-data:
+  pgdata:
