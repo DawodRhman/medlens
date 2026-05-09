@@ -15,7 +15,7 @@ class Patient(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     dob = Column(DateTime, nullable=True)
-    metadata = Column(JSON, nullable=True)
+    metadata_json = Column("metadata", JSON, nullable=True)
     records = relationship("Record", back_populates="patient")
 
 
@@ -25,7 +25,7 @@ class Record(Base):
     patient_id = Column(Integer, ForeignKey("patients.id"))
     created_at = Column(DateTime, default=datetime.utcnow)
     source = Column(String)
-    metadata = Column(JSON)
+    metadata_json = Column("metadata", JSON)
     predictions = relationship("Prediction", back_populates="record")
     patient = relationship("Patient", back_populates="records")
 
